@@ -335,6 +335,35 @@ if ( ! function_exists('form_color'))
 // ------------------------------------------------------------------------
 
 /**
+ * Data List
+ *
+ * Generates a data list
+ *
+ * @access	public
+ * @param	mixed
+ * @param	array
+ * @return	string
+ */
+if ( ! function_exists('form_datalist'))
+{
+	function form_datalist($data = '', $values = array())
+	{
+		$defaults = array('id' => (( ! is_array($data)) ? $data : ''));
+
+		$html = "<datalist "._parse_form_attributes($data, $defaults).">";
+		
+		foreach( $values as $label => $value )
+		{
+			$html .= '<option value="' . $value . '" label="' . $label . '"></option>';
+		}
+		
+		return $html .= "</datalist>";
+	}
+}
+
+// ------------------------------------------------------------------------
+
+/**
  * Keygen
  *
  * Generates <keygen> element
@@ -370,7 +399,7 @@ if ( ! function_exists('form_output'))
 	{
 		$defaults = array('name' => (( ! is_array($data)) ? $data : ''));
 
-		return "<output "._parse_form_attributes($data, $defaults)." /></output>";
+		return "<output "._parse_form_attributes($data, $defaults)."></output>";
 	}
 }
 
