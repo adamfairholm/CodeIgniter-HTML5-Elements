@@ -3,7 +3,7 @@
 /**
  * CodeIgniter HTML5 Form Helper
  *
- * Extended from the CodeIgniter native HTML helper
+ * Extended from the CodeIgniter native form helper
  * @copyright	Copyright (c) 2006, EllisLab, Inc.
  * @link		http://codeigniter.com
  *
