@@ -342,11 +342,12 @@ if ( ! function_exists('form_color'))
  * @access	public
  * @param	mixed
  * @param	array
+ * @param	bool
  * @return	string
  */
 if ( ! function_exists('form_datalist'))
 {
-	function form_datalist($data = '', $values = array())
+	function form_datalist($data = '', $values = array(), $use_label = FALSE)
 	{
 		$defaults = array('id' => (( ! is_array($data)) ? $data : ''));
 
@@ -354,7 +355,12 @@ if ( ! function_exists('form_datalist'))
 		
 		foreach( $values as $label => $value )
 		{
-			$html .= '<option value="' . $value . '" label="' . $label . '"></option>';
+			$html .= '<option value="' . $value . '"';
+			
+			if( $use_label )
+				$html .= 'label="' . $label . '"';
+				
+			$html .= '></option>';
 		}
 		
 		return $html .= "</datalist>";
