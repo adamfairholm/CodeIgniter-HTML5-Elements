@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>HTML5 Language Helper Extension : CodeIgniter HTML5 Elements</title>
+
+<style type='text/css' media='all'>@import url('../userguide.css');</style>
+<link rel='stylesheet' type='text/css' media='all' href='../userguide.css' />
+
+<meta http-equiv='expires' content='-1' />
+<meta http-equiv= 'pragma' content='no-cache' />
+<meta name='robots' content='all' />
+<meta name='author' content='Adam Fairholm' />
+<meta name='description' content='CodeIgniter HTML5 Elements User Guide' />
+
+</head>
+<body>
+
+<div id="masthead">
+<table cellpadding="0" cellspacing="0" border="0" style="width:100%">
+<tr>
+<td><h1>CodeIgniter HTML5 Elements v1.0</h1></td>
+</tr>
+</table>
+</div>
+
+<table cellpadding="0" cellspacing="0" border="0" style="width:100%">
+<tr>
+<td id="breadcrumb">
+<a href="../">CodeIgniter HTML5 Elements User Guide</a> &nbsp;&#8250;&nbsp;
+HTML5 Language Helper Extension</a>
+</td>
+</tr>
+</table>
+<!-- END BREADCRUMB -->
+
+<br clear="all" />
+
+
+<!-- START CONTENT -->
+<div id="content">
+
+
+<h1>HTML5 Language Helper Extension</h1>
+
+<p>The HTML5 Form Helper Extension extends the native CodeIgniter form helper to include HTML5 elements.</p>
+
+<p>The following functions are available:</p>
+
+<h2>ruby('<var>ruby array</var>', '<var>[nested value]</var>')</h2>
+
+<p>Creates a ruby sequence from an associative array of where the base text is the array key.</p>
+
+<code>
+$data = array(<br />
+&nbsp;&nbsp;&nbsp;'攻殻' => 'こうか',<br />
+&nbsp;&nbsp;&nbsp;'機動隊' => 'きどうたい'<br />
+);<br />
+<br />
+echo ruby( $data );<br />
+</code>
+
+<p>For a nested ruby sequence, the second parameter accepts the third element.</p>
+
+<code>
+$data = array(<br />
+&nbsp;&nbsp;&nbsp;'攻殻' => 'こうか',<br />
+&nbsp;&nbsp;&nbsp;'機動隊' => 'きどうたい'<br />
+);<br />
+<br />
+echo ruby( $data, 'Kōkakukidōtai' );<br />
+</code>
+
+<p>For more information on ruby, take a look at <a href="http://html5doctor.com/ruby-rt-rp-element/">this article</a>.</p>
+
+<p class="important"><strong>Note:</strong> The ruby function always uses &#60;rp&#62; for graceful browser degradation.</p>
+
+</div>
+<!-- END CONTENT -->
+
+
+<div id="footer">
+<p>
+Previous Topic:&nbsp;&nbsp;<a href="file_helper.html">File Helper</a>
+&nbsp;&nbsp;&nbsp;&middot;&nbsp;&nbsp;
+<a href="#top">Top of Page</a>&nbsp;&nbsp;&nbsp;&middot;&nbsp;&nbsp;
+<a href="../index.html">User Guide Home</a>&nbsp;&nbsp;&nbsp;&middot;&nbsp;&nbsp;
+Next Topic:&nbsp;&nbsp;<a href="html_helper.html">HTML Helper</a>
+</p>
+<p><a href="http://codeigniter.com">CodeIgniter</a> &nbsp;&middot;&nbsp; Copyright &#169; 2006-2010 &nbsp;&middot;&nbsp; <a href="http://ellislab.com/">EllisLab, Inc.</a></p>
+</div>
+
+</body>
+</html>
