@@ -43,13 +43,21 @@
  * @access	public
  * @param	mixed
  * @param	string
+ * @param	array
  * @return	string
  */
 if ( ! function_exists('video'))
 {
-	function video($attr = array(), $no_support_message = 'Your browser does not support the HTML5 video tag')
+	function video($attr = array(), $sources = array(), $no_support_message = 'Your browser does not support the HTML5 video tag')
 	{
-		return "<video "._parse_attributes($attr).">$no_support_message</video>";
+		$html = "<video "._parse_attributes($attr).">";
+		
+		if( !empty($sources) )
+			$html .= _parse_sources($sources);
+		
+		$html .= $no_support_message;
+		
+		return $html .= "</video>";
 	}
 }
 
@@ -83,13 +91,21 @@ if ( ! function_exists('canvas'))
  * @access	public
  * @param	mixed
  * @param	string
+ * @param	array
  * @return	string
  */
 if ( ! function_exists('audio'))
 {
-	function audio($attr = array(), $no_support_message = 'Your browser does not support the HTML5 audio tag')
+	function audio($attr = array(), $sources = array(), $no_support_message = 'Your browser does not support the HTML5 audio tag')
 	{
-		return "<audio "._parse_attributes($attr).">$no_support_message</audio>";
+		$html = "<audio "._parse_attributes($attr).">";
+		
+		if( !empty($sources) )
+			$html .= _parse_sources($sources);
+		
+		$html .= $no_support_message;
+		
+		return $html .= "</audio>";
 	}
 }
 
@@ -100,7 +116,7 @@ if ( ! function_exists('audio'))
  *
  * Parse attributes for HTML elements
  *
- * @access	public
+ * @access	private
  * @param	mixed
  * @return	string
  */
@@ -124,6 +140,46 @@ if ( ! function_exists('_parse_attributes'))
 	}
 }
 
+// ------------------------------------------------------------------------
+
+/**
+ * Parse Sources
+ *
+ * Generates sources for the <audio> and <video> elements
+ *
+ * @access	private
+ * @param	mixed
+ * @param	string
+ * @return	string
+ */
+if ( ! function_exists('_parse_sources'))
+{
+	function _parse_sources($sources = array())
+	{
+		if( empty($sources) )
+			return null;
+			
+		$html = null;
+			
+		foreach( $sources as $source )
+		{
+			$html .= '<source src="' . $source['src'] . '"';
+			
+			if( isset($source['type']) )
+				$html .= ' type="' . $source['type'] . '"';
+
+			if( isset($source['media']) )
+				$html .= ' media="' . $source['media'] . '"';
+			 
+			if( isset($source['attr']) && !empty($source['attr']) )
+				$html .= ' ' . _parse_attributes( $source['attr'] );
+			 
+			$html .= ' />';
+		}
+	
+		return $html;
+	}
+}
 
 
 /* End of file MY_Html_helper.php */
