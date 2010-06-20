@@ -56,6 +56,76 @@ if ( ! function_exists('form_email'))
 	}
 }
 
+// ------------------------------------------------------------------------
+
+/**
+ * URL Field
+ *
+ * Identical to the input function but adds the "url" type
+ *
+ * @access	public
+ * @param	mixed
+ * @param	string
+ * @param	string
+ * @return	string
+ */
+if ( ! function_exists('form_url'))
+{
+	function form_url($data = '', $value = '', $extra = '')
+	{
+		$defaults = array('type' => 'url', 'name' => (( ! is_array($data)) ? $data : ''), 'value' => $value);
+
+		return "<input "._parse_form_attributes($data, $defaults).$extra." />";
+	}
+}
+
+// ------------------------------------------------------------------------
+
+/**
+ * Number Field
+ *
+ * Identical to the input function but adds the "number" type
+ *
+ * @access	public
+ * @param	mixed
+ * @param	string
+ * @param	string
+ * @return	string
+ */
+if ( ! function_exists('form_number'))
+{
+	function form_number($data = '', $value = '', $extra = '')
+	{
+		$defaults = array('type' => 'number', 'name' => (( ! is_array($data)) ? $data : ''), 'value' => $value);
+
+		return "<input "._parse_form_attributes($data, $defaults).$extra." />";
+	}
+}
+
+
+// ------------------------------------------------------------------------
+
+/**
+ * Date Field
+ *
+ * Identical to the input function but adds the "email" type
+ *
+ * @access	public
+ * @param	mixed
+ * @param	string
+ * @param	string
+ * @return	string
+ */
+if ( ! function_exists('form_date'))
+{
+	function form_date($data = '', $value = '', $extra = '')
+	{
+		$defaults = array('type' => 'date', 'name' => (( ! is_array($data)) ? $data : ''), 'value' => $value);
+
+		return "<input "._parse_form_attributes($data, $defaults).$extra." />";
+	}
+}
+
 
 
 /* End of file MY_Form_helper.php */
