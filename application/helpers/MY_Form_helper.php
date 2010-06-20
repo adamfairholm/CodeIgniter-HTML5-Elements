@@ -43,7 +43,7 @@
  * @access	public
  * @param	mixed
  * @param	string
- * @param	string
+ * @param	mixed
  * @return	string
  */
 if ( ! function_exists('form_email'))
@@ -52,7 +52,7 @@ if ( ! function_exists('form_email'))
 	{
 		$defaults = array('type' => 'email', 'name' => (( ! is_array($data)) ? $data : ''), 'value' => $value);
 
-		return "<input "._parse_form_attributes($data, $defaults).$extra." />";
+		return "<input "._parse_form_attributes($data, $defaults)._parse_extras($extra)." />";
 	}
 }
 
@@ -66,7 +66,7 @@ if ( ! function_exists('form_email'))
  * @access	public
  * @param	mixed
  * @param	string
- * @param	string
+ * @param	mixed
  * @return	string
  */
 if ( ! function_exists('form_telephone'))
@@ -75,7 +75,7 @@ if ( ! function_exists('form_telephone'))
 	{
 		$defaults = array('type' => 'tel', 'name' => (( ! is_array($data)) ? $data : ''), 'value' => $value);
 
-		return "<input "._parse_form_attributes($data, $defaults).$extra." />";
+		return "<input "._parse_form_attributes($data, $defaults)._parse_extras($extra)." />";
 	}
 }
 
@@ -89,7 +89,7 @@ if ( ! function_exists('form_telephone'))
  * @access	public
  * @param	mixed
  * @param	string
- * @param	string
+ * @param	mixed
  * @return	string
  */
 if ( ! function_exists('form_url'))
@@ -98,7 +98,7 @@ if ( ! function_exists('form_url'))
 	{
 		$defaults = array('type' => 'url', 'name' => (( ! is_array($data)) ? $data : ''), 'value' => $value);
 
-		return "<input "._parse_form_attributes($data, $defaults).$extra." />";
+		return "<input "._parse_form_attributes($data, $defaults)._parse_extras($extra)." />";
 	}
 }
 
@@ -112,7 +112,7 @@ if ( ! function_exists('form_url'))
  * @access	public
  * @param	mixed
  * @param	string
- * @param	string
+ * @param	mixed
  * @return	string
  */
 if ( ! function_exists('form_number'))
@@ -121,7 +121,7 @@ if ( ! function_exists('form_number'))
 	{
 		$defaults = array('type' => 'number', 'name' => (( ! is_array($data)) ? $data : ''), 'value' => $value);
 
-		return "<input "._parse_form_attributes($data, $defaults).$extra." />";
+		return "<input "._parse_form_attributes($data, $defaults)._parse_extras($extra)." />";
 	}
 }
 
@@ -135,7 +135,7 @@ if ( ! function_exists('form_number'))
  * @access	public
  * @param	mixed
  * @param	string
- * @param	string
+ * @param	mixed
  * @return	string
  */
 if ( ! function_exists('form_range'))
@@ -144,7 +144,7 @@ if ( ! function_exists('form_range'))
 	{
 		$defaults = array('type' => 'range', 'name' => (( ! is_array($data)) ? $data : ''), 'value' => $value);
 
-		return "<input "._parse_form_attributes($data, $defaults).$extra." />";
+		return "<input "._parse_form_attributes($data, $defaults)._parse_extras($extra)." />";
 	}
 }
 
@@ -158,7 +158,7 @@ if ( ! function_exists('form_range'))
  * @access	public
  * @param	mixed
  * @param	string
- * @param	string
+ * @param	mixed
  * @return	string
  */
 if ( ! function_exists('form_date'))
@@ -167,7 +167,7 @@ if ( ! function_exists('form_date'))
 	{
 		$defaults = array('type' => 'date', 'name' => (( ! is_array($data)) ? $data : ''), 'value' => $value);
 
-		return "<input "._parse_form_attributes($data, $defaults).$extra." />";
+		return "<input "._parse_form_attributes($data, $defaults)._parse_extras($extra)." />";
 	}
 }
 
@@ -181,7 +181,7 @@ if ( ! function_exists('form_date'))
  * @access	public
  * @param	mixed
  * @param	string
- * @param	string
+ * @param	mixed
  * @return	string
  */
 if ( ! function_exists('form_month'))
@@ -190,7 +190,7 @@ if ( ! function_exists('form_month'))
 	{
 		$defaults = array('type' => 'month', 'name' => (( ! is_array($data)) ? $data : ''), 'value' => $value);
 
-		return "<input "._parse_form_attributes($data, $defaults).$extra." />";
+		return "<input "._parse_form_attributes($data, $defaults)._parse_extras($extra)." />";
 	}
 }
 
@@ -204,7 +204,7 @@ if ( ! function_exists('form_month'))
  * @access	public
  * @param	mixed
  * @param	string
- * @param	string
+ * @param	mixed
  * @return	string
  */
 if ( ! function_exists('form_week'))
@@ -213,7 +213,7 @@ if ( ! function_exists('form_week'))
 	{
 		$defaults = array('type' => 'week', 'name' => (( ! is_array($data)) ? $data : ''), 'value' => $value);
 
-		return "<input "._parse_form_attributes($data, $defaults).$extra." />";
+		return "<input "._parse_form_attributes($data, $defaults)._parse_extras($extra)." />";
 	}
 }
 
@@ -227,7 +227,7 @@ if ( ! function_exists('form_week'))
  * @access	public
  * @param	mixed
  * @param	string
- * @param	string
+ * @param	mixed
  * @return	string
  */
 if ( ! function_exists('form_time'))
@@ -236,7 +236,7 @@ if ( ! function_exists('form_time'))
 	{
 		$defaults = array('type' => 'time', 'name' => (( ! is_array($data)) ? $data : ''), 'value' => $value);
 
-		return "<input "._parse_form_attributes($data, $defaults).$extra." />";
+		return "<input "._parse_form_attributes($data, $defaults)._parse_extras($extra)." />";
 	}
 }
 
@@ -250,7 +250,7 @@ if ( ! function_exists('form_time'))
  * @access	public
  * @param	mixed
  * @param	string
- * @param	string
+ * @param	mixed
  * @return	string
  */
 if ( ! function_exists('form_datetime'))
@@ -259,7 +259,7 @@ if ( ! function_exists('form_datetime'))
 	{
 		$defaults = array('type' => 'datetime', 'name' => (( ! is_array($data)) ? $data : ''), 'value' => $value);
 
-		return "<input "._parse_form_attributes($data, $defaults).$extra." />";
+		return "<input "._parse_form_attributes($data, $defaults)._parse_extras($extra)." />";
 	}
 }
 
@@ -273,7 +273,7 @@ if ( ! function_exists('form_datetime'))
  * @access	public
  * @param	mixed
  * @param	string
- * @param	string
+ * @param	mixed
  * @return	string
  */
 if ( ! function_exists('form_datetime_local'))
@@ -282,7 +282,7 @@ if ( ! function_exists('form_datetime_local'))
 	{
 		$defaults = array('type' => 'datetime-local', 'name' => (( ! is_array($data)) ? $data : ''), 'value' => $value);
 
-		return "<input "._parse_form_attributes($data, $defaults).$extra." />";
+		return "<input "._parse_form_attributes($data, $defaults)._parse_extras($extra)." />";
 	}
 }
 
@@ -296,7 +296,7 @@ if ( ! function_exists('form_datetime_local'))
  * @access	public
  * @param	mixed
  * @param	string
- * @param	string
+ * @param	mixed
  * @return	string
  */
 if ( ! function_exists('form_search'))
@@ -305,7 +305,7 @@ if ( ! function_exists('form_search'))
 	{
 		$defaults = array('type' => 'search', 'name' => (( ! is_array($data)) ? $data : ''), 'value' => $value);
 
-		return "<input "._parse_form_attributes($data, $defaults).$extra." />";
+		return "<input "._parse_form_attributes($data, $defaults)._parse_extras($extra)." />";
 	}
 }
 
@@ -319,7 +319,7 @@ if ( ! function_exists('form_search'))
  * @access	public
  * @param	mixed
  * @param	string
- * @param	string
+ * @param	mixed
  * @return	string
  */
 if ( ! function_exists('form_color'))
@@ -328,12 +328,80 @@ if ( ! function_exists('form_color'))
 	{
 		$defaults = array('type' => 'color', 'name' => (( ! is_array($data)) ? $data : ''), 'value' => $value);
 
-		return "<input "._parse_form_attributes($data, $defaults).$extra." />";
+		return "<input "._parse_form_attributes($data, $defaults)._parse_extras($extra)." />";
 	}
 }
 
+// ------------------------------------------------------------------------
 
+/**
+ * Keygen
+ *
+ * Generates <keygen> element
+ *
+ * @access	public
+ * @param	mixed
+ * @return	string
+ */
+if ( ! function_exists('form_keygen'))
+{
+	function form_keygen($data = '')
+	{
+		$defaults = array('name' => (( ! is_array($data)) ? $data : ''));
 
+		return "<keygen "._parse_form_attributes($data, $defaults)." />";
+	}
+}
+
+// ------------------------------------------------------------------------
+
+/**
+ * Output
+ *
+ * Generates <output></output> element
+ *
+ * @access	public
+ * @param	mixed
+ * @return	string
+ */
+if ( ! function_exists('form_output'))
+{
+	function form_output($data = '')
+	{
+		$defaults = array('name' => (( ! is_array($data)) ? $data : ''));
+
+		return "<output "._parse_form_attributes($data, $defaults)." /></output>";
+	}
+}
+
+// ------------------------------------------------------------------------
+
+/**
+ * Parse extras
+ *
+ * Takes an array of extras and spits them back in a string or just returns the string
+ *
+ * @access	public
+ * @param	mixed
+ * @return	string
+ */
+if ( ! function_exists('_parse_extras'))
+{
+	function _parse_extras( $extras )
+	{
+		if( ! is_array($extras) )
+			return $extras;
+		
+		$extra_string = null;
+		
+		foreach( $extras as $extra )
+		{
+			$extra_string .= $extra . ' ';
+		}
+	
+		return $extra;
+	}
+}
 
 
 /* End of file MY_Form_helper.php */
