@@ -1,0 +1,192 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>HTML5 Form Helper Extension : CodeIgniter HTML5 Elements</title>
+
+<style type='text/css' media='all'>@import url('../userguide.css');</style>
+<link rel='stylesheet' type='text/css' media='all' href='../userguide.css' />
+
+<meta http-equiv='expires' content='-1' />
+<meta http-equiv= 'pragma' content='no-cache' />
+<meta name='robots' content='all' />
+<meta name='author' content='Adam Fairholm' />
+<meta name='description' content='CodeIgniter HTML5 Elements User Guide' />
+
+</head>
+<body>
+
+<div id="masthead">
+<table cellpadding="0" cellspacing="0" border="0" style="width:100%">
+<tr>
+<td><h1>CodeIgniter HTML5 Elements v1.0</h1></td>
+</tr>
+</table>
+</div>
+
+<table cellpadding="0" cellspacing="0" border="0" style="width:100%">
+<tr>
+<td id="breadcrumb">
+<a href="../">CodeIgniter HTML5 Elements User Guide</a> &nbsp;&#8250;&nbsp;
+HTML5 Form Helper Extension</a>
+</td>
+</tr>
+</table>
+<!-- END BREADCRUMB -->
+
+<br clear="all" />
+
+
+<!-- START CONTENT -->
+<div id="content">
+
+
+<h1>HTML5 Form Helper Extension</h1>
+
+<p>The HTML5 Form Helper Extension extends the native CodeIgniter form helper to include HTML5 elements.</p>
+
+<h2>Handling New HTML Attributes</h2>
+
+<p>The good news is that CodeIgniter's form helper works fine with HTML5, since the general structure of attribute="value" is kept in tact. That means the majority of these inputs function exactly as the <dfn>form_input</dfn> <a href="http://codeigniter.com/user_guide/helpers/form_helper.html">CodeIgniter function does</a>, and takes the same arguments.</p>
+
+<p>The W3C has a <a href="http://www.w3schools.com/html5/tag_input.asp">list of new attributes</a>. Just remember that some do not follow the <dfn>attribute="value"</dfn> pattern and need to be placed into the third extra parameter, like <var>autofocus</var> and <var>required</var>.</p>
+
+<h3>Change to Extra Parameter</h3>
+
+<p>All form input functions have an extra third parameter to input data that does not fall into a <dfn>attribute="value"</dfn> construct. In the HTML5 Form Helper Extension, there is a new function that parses this variable so it can either accept a string or an array. So, if you had multiple extra parameters, you could pass them as an array:</p>
+
+<code>
+$extras = array('multiple', 'required', 'autofocus');<br />
+<br />
+echo form_url('link_url', '', $extras);
+</code>
+
+<p>The following functions are available:</p>
+
+<h2>form_email()</h2>
+
+<p>Creates an input with the type of "email". In browsers that don't support this, it will be parsed as a simple text field. In some cases special functionality can be afforded to this input, as in the case with the iPhone.</p>
+
+<p>On Opera 10, an error will be shown if the input is not a valid email adddress.</p>
+
+<h2>form_telephone()</h2>
+
+<p>Creates an input with the type of "tel". Similar to the "email" type, this will bring up special functionality on browsers that use it like on the iPhone.</p>
+
+<h2>form_url()</h2>
+
+<p>Creates an input with the type of "url". Similar to the "email" type, this will bring up special functionality on browsers that use it like on the iPhone.</p>
+
+<h2>form_number()</h2>
+
+<p>Creates an input with the type of "number". Some browsers will read specific attributes for number selection.</p>
+
+<h3>Special Attributes</h3>
+
+<table cellpadding="0" cellspacing="1" border="0" style="width:100%" class="tableborder">
+<tr>
+	<th>Attribute</th>
+	<th>Options</th>
+	<th>Description</th>
+</tr>
+<tr>
+	<td class="td"><strong>min</strong></td>
+	<td class="td">number</td>
+	<td class="td">The input field's minimum value.</td>
+</tr>
+<tr>
+	<td class="td"><strong>max</strong></td>
+	<td class="td">number</td>
+	<td class="td">The input field's maximum value.</td>
+</tr>
+<tr>
+	<td class="td"><strong>step</strong></td>
+	<td class="td">number</td>
+	<td class="td">Increments that the numbers can go in.</td>
+</tr>
+</table>
+
+<p>The iPhone will bring up a numeric keypad for this input, and Opera 10 will create a little interface to increase and decrease the number by the <var>step</var> amount.</p>
+
+<h2>form_range()</h2>
+
+<p>Creates an input with the type of "range". Takes the same numeric attributes as the <dfn>form_number</dfn> function. In capable browsers, this will render as a slider.</p>
+
+<h2>form_date()</h2>
+
+<p>Creates an input with the type of "date". In Opera 9+, this will render a date selector. For more information on dates and time in HTML5, try <a href="http://diveintohtml5.org/forms.html">this link</a>.</p>
+
+<h2>form_month()</h2>
+
+<p>Creates an input with the type of "month". In Opera 9+, this will render a month/year selector.</p>
+
+<h2>form_week()</h2>
+
+<p>Creates an input with the type of "week". In Opera 9+, this will render a week selector.</p>
+
+<h2>form_time()</h2>
+
+<p>Creates an input with the type of "time". In Opera 9+, this will render a time selector.</p>
+
+<h2>form_datetime()</h2>
+
+<p>Creates an input with the type of "datetime". In Opera 9+, this will render a datetime selector.</p>
+
+<h2>form_datetime_local()</h2>
+
+<p>Creates an input with the type of "datetime-local". In Opera 9+, this will render a datetime-local selector.</p>
+
+<h2>form_search()</h2>
+
+<p>Creates an input with the type of "search". In some browsers, such as Safari, the search box will render in a native style. For more information on search boxes, try <a href="http://diveintohtml5.org/forms.html#type-search">this link</a>.</p>
+
+<h2>form_color()</h2>
+
+<p>Creates an input with the type of "color". This is just for show, because nobody supports it.</p>
+
+<h2>form_datalist()</h2>
+
+<p><a href="http://www.w3schools.com/html5/tag_datalist.asp">Datalists</a> describe possible values for an input tag and have similar formats to a select box. Here is an example of a datalist from W3C:</p>
+
+<code>
+&#60;input list="cars" /&#62;<br />
+<br />
+&#60;datalist id="cars"&#62;<br />
+&#60;option value="BMW"&#62;<br />
+&#60;option value="Ford"&#62;<br />
+&#60;option value="Volvo"&#62;<br />
+&#60;/datalist&#62;
+</code>
+
+<p>As you can see, the input has an attribute called <var>list</var> which corresponds to the id of the datalist. The datalist contains elements that are possible values of the input. When a user starts typing, they see the options. Only in Opera 9+ though.</p>
+
+<p>The <dfn>form_datalist</dfn> function takes a first argument of <var>data</var> identical to other input functions. The second parameter takes a multi-dimensional array of values for the datalist.</p>
+
+<code>
+$values = array('BMW', 'Ford', 'Volvo');<br />
+<br />
+$data = array('id' => 'cars');<br />
+<br />
+echo form_datalist($data, $values);
+</code>
+
+<p>The <var>option</var> element takes an attribute of <var>label</var> as well. If you want to use that, send a associative array in the form on <var>label => value</var> and sent the third parameter to <var>TRUE</var>.</p>
+
+</div>
+<!-- END CONTENT -->
+
+
+<div id="footer">
+<p>
+Previous Topic:&nbsp;&nbsp;<a href="file_helper.html">File Helper</a>
+&nbsp;&nbsp;&nbsp;&middot;&nbsp;&nbsp;
+<a href="#top">Top of Page</a>&nbsp;&nbsp;&nbsp;&middot;&nbsp;&nbsp;
+<a href="../index.html">User Guide Home</a>&nbsp;&nbsp;&nbsp;&middot;&nbsp;&nbsp;
+Next Topic:&nbsp;&nbsp;<a href="html_helper.html">HTML Helper</a>
+</p>
+<p><a href="http://codeigniter.com">CodeIgniter</a> &nbsp;&middot;&nbsp; Copyright &#169; 2006-2010 &nbsp;&middot;&nbsp; <a href="http://ellislab.com/">EllisLab, Inc.</a></p>
+</div>
+
+</body>
+</html>
