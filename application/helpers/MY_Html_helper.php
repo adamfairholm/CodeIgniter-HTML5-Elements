@@ -56,6 +56,46 @@ if ( ! function_exists('video'))
 // ------------------------------------------------------------------------
 
 /**
+ * Canvas
+ *
+ * Generates <canvas> element
+ *
+ * @access	public
+ * @param	mixed
+ * @param	string
+ * @return	string
+ */
+if ( ! function_exists('canvas'))
+{
+	function canvas($attr = array(), $no_support_message = 'Your browser does not support the HTML5 canvas tag')
+	{
+		return "<canvas "._parse_attributes($attr).">$no_support_message</canvas>";
+	}
+}
+
+// ------------------------------------------------------------------------
+
+/**
+ * Audio
+ *
+ * Generates <audio> element
+ *
+ * @access	public
+ * @param	mixed
+ * @param	string
+ * @return	string
+ */
+if ( ! function_exists('audio'))
+{
+	function audio($attr = array(), $no_support_message = 'Your browser does not support the HTML5 audio tag')
+	{
+		return "<audio "._parse_attributes($attr).">$no_support_message</audio>";
+	}
+}
+
+// ------------------------------------------------------------------------
+
+/**
  * Parse attributes
  *
  * Parse attributes for HTML elements
