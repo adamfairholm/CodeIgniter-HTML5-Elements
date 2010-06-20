@@ -1,6 +1,6 @@
 h1. CodeIgniter HTML5 Elements
 
-h2. Developers
+h2. Author
 
 * "Adam Fairholm":http://twitter.com/adamfairholm
 
@@ -12,3 +12,4 @@ h2. Contents
 
 * MY_Form_helper.php
 * MY_Html_helper.php
+* MY_Language_helper.php
