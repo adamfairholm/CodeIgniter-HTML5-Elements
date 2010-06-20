@@ -59,6 +59,29 @@ if ( ! function_exists('form_email'))
 // ------------------------------------------------------------------------
 
 /**
+ * Telephone Field
+ *
+ * Identical to the input function but adds the "tel" type
+ *
+ * @access	public
+ * @param	mixed
+ * @param	string
+ * @param	string
+ * @return	string
+ */
+if ( ! function_exists('form_telephone'))
+{
+	function form_telephone($data = '', $value = '', $extra = '')
+	{
+		$defaults = array('type' => 'tel', 'name' => (( ! is_array($data)) ? $data : ''), 'value' => $value);
+
+		return "<input "._parse_form_attributes($data, $defaults).$extra." />";
+	}
+}
+
+// ------------------------------------------------------------------------
+
+/**
  * URL Field
  *
  * Identical to the input function but adds the "url" type
@@ -102,6 +125,28 @@ if ( ! function_exists('form_number'))
 	}
 }
 
+// ------------------------------------------------------------------------
+
+/**
+ * Range Field
+ *
+ * Identical to the input function but adds the "range" type
+ *
+ * @access	public
+ * @param	mixed
+ * @param	string
+ * @param	string
+ * @return	string
+ */
+if ( ! function_exists('form_range'))
+{
+	function form_range($data = '', $value = '', $extra = '')
+	{
+		$defaults = array('type' => 'range', 'name' => (( ! is_array($data)) ? $data : ''), 'value' => $value);
+
+		return "<input "._parse_form_attributes($data, $defaults).$extra." />";
+	}
+}
 
 // ------------------------------------------------------------------------
 
@@ -125,6 +170,169 @@ if ( ! function_exists('form_date'))
 		return "<input "._parse_form_attributes($data, $defaults).$extra." />";
 	}
 }
+
+// ------------------------------------------------------------------------
+
+/**
+ * Month Field
+ *
+ * Identical to the input function but adds the "month" type
+ *
+ * @access	public
+ * @param	mixed
+ * @param	string
+ * @param	string
+ * @return	string
+ */
+if ( ! function_exists('form_month'))
+{
+	function form_month($data = '', $value = '', $extra = '')
+	{
+		$defaults = array('type' => 'month', 'name' => (( ! is_array($data)) ? $data : ''), 'value' => $value);
+
+		return "<input "._parse_form_attributes($data, $defaults).$extra." />";
+	}
+}
+
+// ------------------------------------------------------------------------
+
+/**
+ * Week Field
+ *
+ * Identical to the input function but adds the "week" type
+ *
+ * @access	public
+ * @param	mixed
+ * @param	string
+ * @param	string
+ * @return	string
+ */
+if ( ! function_exists('form_week'))
+{
+	function form_week($data = '', $value = '', $extra = '')
+	{
+		$defaults = array('type' => 'week', 'name' => (( ! is_array($data)) ? $data : ''), 'value' => $value);
+
+		return "<input "._parse_form_attributes($data, $defaults).$extra." />";
+	}
+}
+
+// ------------------------------------------------------------------------
+
+/**
+ * Time Field
+ *
+ * Identical to the input function but adds the "time" type
+ *
+ * @access	public
+ * @param	mixed
+ * @param	string
+ * @param	string
+ * @return	string
+ */
+if ( ! function_exists('form_time'))
+{
+	function form_time($data = '', $value = '', $extra = '')
+	{
+		$defaults = array('type' => 'time', 'name' => (( ! is_array($data)) ? $data : ''), 'value' => $value);
+
+		return "<input "._parse_form_attributes($data, $defaults).$extra." />";
+	}
+}
+
+// ------------------------------------------------------------------------
+
+/**
+ * Datetime Field
+ *
+ * Identical to the input function but adds the "datetime" type
+ *
+ * @access	public
+ * @param	mixed
+ * @param	string
+ * @param	string
+ * @return	string
+ */
+if ( ! function_exists('form_datetime'))
+{
+	function form_datetime($data = '', $value = '', $extra = '')
+	{
+		$defaults = array('type' => 'datetime', 'name' => (( ! is_array($data)) ? $data : ''), 'value' => $value);
+
+		return "<input "._parse_form_attributes($data, $defaults).$extra." />";
+	}
+}
+
+// ------------------------------------------------------------------------
+
+/**
+ * Datetime Local Field
+ *
+ * Identical to the input function but adds the "datetime-local" type
+ *
+ * @access	public
+ * @param	mixed
+ * @param	string
+ * @param	string
+ * @return	string
+ */
+if ( ! function_exists('form_datetime_local'))
+{
+	function form_datetime_local($data = '', $value = '', $extra = '')
+	{
+		$defaults = array('type' => 'datetime-local', 'name' => (( ! is_array($data)) ? $data : ''), 'value' => $value);
+
+		return "<input "._parse_form_attributes($data, $defaults).$extra." />";
+	}
+}
+
+// ------------------------------------------------------------------------
+
+/**
+ * Search Field
+ *
+ * Identical to the input function but adds the "search" type
+ *
+ * @access	public
+ * @param	mixed
+ * @param	string
+ * @param	string
+ * @return	string
+ */
+if ( ! function_exists('form_search'))
+{
+	function form_search($data = '', $value = '', $extra = '')
+	{
+		$defaults = array('type' => 'search', 'name' => (( ! is_array($data)) ? $data : ''), 'value' => $value);
+
+		return "<input "._parse_form_attributes($data, $defaults).$extra." />";
+	}
+}
+
+// ------------------------------------------------------------------------
+
+/**
+ * Color Field
+ *
+ * Identical to the input function but adds the "color" type
+ *
+ * @access	public
+ * @param	mixed
+ * @param	string
+ * @param	string
+ * @return	string
+ */
+if ( ! function_exists('form_color'))
+{
+	function form_color($data = '', $value = '', $extra = '')
+	{
+		$defaults = array('type' => 'color', 'name' => (( ! is_array($data)) ? $data : ''), 'value' => $value);
+
+		return "<input "._parse_form_attributes($data, $defaults).$extra." />";
+	}
+}
+
+
 
 
 
