@@ -147,7 +147,7 @@ echo form_url('link_url', '', $extras);
 
 <h2>form_datalist()</h2>
 
-<p><a href="http://www.w3schools.com/html5/tag_datalist.asp">Datalists</a> describe possible values for an input tag and have similar formats to a select box. Here is an example of a datalist from W3C:</p>
+<p><a href="http://www.w3schools.com/html5/tag_datalist.asp">Datalists</a> describe possible values for an input element and have a similar format to a select box. Here is an example of a datalist from W3C:</p>
 
 <code>
 &#60;input list="cars" /&#62;<br />
@@ -172,6 +172,14 @@ echo form_datalist($data, $values);
 </code>
 
 <p>The <var>option</var> element takes an attribute of <var>label</var> as well. If you want to use that, send a associative array in the form on <var>label => value</var> and sent the third parameter to <var>TRUE</var>.</p>
+
+<h2>form_keygen()</h2>
+
+<p>Creates a <dfn>keygen</dfn> element and takes an array of attributes. For more information on <dfn>keygen</dfn>, check out the <a href="http://dev.w3.org/html5/markup/keygen.html">W3C Editor's Draft</a>.</p>
+
+<h2>form_output()</h2>
+
+<p>Generates an <dfn>output</dfn> element and takes an array of attributes. For more information on <dfn>output</dfn>, check out the <a href="http://dev.w3.org/html5/markup/output.html">W3C Editor's Draft</a>.</p></p>
 
 </div>
 <!-- END CONTENT -->
