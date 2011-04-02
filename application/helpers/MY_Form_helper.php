@@ -427,14 +427,7 @@ if ( ! function_exists('_parse_extras'))
 		if( ! is_array($extras) )
 			return $extras;
 		
-		$extra_string = null;
-		
-		foreach( $extras as $extra )
-		{
-			$extra_string .= $extra . ' ';
-		}
-	
-		return $extra;
+		return ' '.implode(' ', $extras);
 	}
 }
 
